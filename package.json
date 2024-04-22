@@ -1,0 +1,61 @@
+{
+  "name": "vie-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "@antv/x6": "^2.18.1",
+    "@antv/x6-plugin-export": "^2.1.6",
+    "@antv/x6-plugin-scroller": "^2.0.10",
+    "core-js": "^3.6.4",
+    "cytoscape": "^3.29.0",
+    "cytoscape-dagre": "^2.5.0",
+    "cytoscape-popper": "^4.0.0",
+    "tippy.js": "^6.3.7",
+    "vue": "^2.6.11",
+    "vue2-scale-box": "^0.1.7"
+  },
+  "devDependencies": {
+    "@antv/layout": "^0.3.25",
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "less-loader": "6.0.0",
+    "lint-staged": "^12.0.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts?(x),vue,json,md}": [
+      "prettier --write",
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
